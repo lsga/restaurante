@@ -1,0 +1,24 @@
+{% extends 'loggin/usuario.html.twig' %}
+
+{% block body %}
+<h2 class="page-header">Todos los Pedidos</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Pedidos</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for pedido in pedidos %}
+      <tr>
+          <td>{{pedido.id}}</td>
+          <td>
+            <a href="/restaurante/web/App_dev.php/pedidos/detalle/{{pedido.id}}" class="btn btn-success">
+            Imprimir Factura
+          </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
