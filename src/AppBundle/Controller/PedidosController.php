@@ -108,8 +108,11 @@ class PedidosController extends Controller
       $producto = $this->getDoctrine()
         ->getRepository('AppBundle:producto')
         ->FindAll();
+      $mesero = $this->getDoctrine()
+        ->getRepository('AppBundle:usuarios')
+        ->FindAll();
     return $this->render('Pedidos/detalle.html.twig', array(
-      'pedidos' => $pedido,'productos' => $producto
+      'pedidos' => $pedido,'productos' => $producto, 'meseros' => $mesero
     ));
   }
 }
